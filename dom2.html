@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom2</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>5</li>
+    </ul>
+    <script>
+        let ul= document.querySelector("ul");
+        let liElem= document.querySelectorAll("li");
+        let fifthElem = liElem[3];
+        let fourthElem= document.createElement("li");
+        fourthElem.innerText="4";
+        ul.insertBefore(fourthElem, fifthElem);
+    </script>
+</body>
+</html>

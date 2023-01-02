@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            height: 200px;
+            width: 200px;
+            border: solid 2px;
+            margin: 2rem;
+            box-shadow: 5px;
+            
+        }
+        body{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+
+    </style>
+</head>
+<body>
+<div class="card" data-color="blue"></div>
+<div class="card" data-color="red"></div>
+<div class="card" data-color="green"></div>
+<div class="card" data-color="yellow"></div>
+<div class="card" data-color="blue"></div>
+<div class="card" data-color="red"></div>
+<div class="card" data-color="green"></div>
+
+<script>
+   let allCards= document.querySelectorAll(".card");
+   allCards.forEach((card) => {
+      card.addEventListener("dblclick", (e)=>{
+         let dataColor= card.getAttribute("data-color");
+         card.classList.add(dataColor);
+         card.style.backgroundColor = dataColor;
+         card.setAttribute("data-color", "used");
+      })
+   });
+</script>
+</body>
+</html>
