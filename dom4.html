@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom4</title>
+    <style>
+        h1{
+            display: flex;
+            justify-content: space-around;
+        }
+        select{
+            display: flex;
+            margin-left: 45%;
+        }
+        .xyz{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .movies {
+            height: 10rem;
+            width: 10rem;
+            background-color: blue;
+            /* justify-content: space-around; */
+            margin: 20px;
+            /* flex-wrap: wrap; */
+            color: azure;
+            font-size: larger;
+            text-align: center;
+            
+            
+        }
+        .movies:hover{
+            background-color: chocolate;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>BOOK MY SHOW</h1>
+    <select>
+        <option value="none">none</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Romance">Romance</option>
+    </select>
+    <div class="xyz">
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Action">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Romance">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Action">Rs 250</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Comedy">Rs 150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Romance">Rs 300</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Comedy">Rs 250</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Action">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Comedy">Rs 400</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading"></h3>
+        <p class="price" data-category="Romance">Rs 5000</p>
+    </div>
+</div>
+<script>
+    let select = document.querySelector("select");
+    let allMovies= document.querySelectorAll(".movies");
+    select.addEventListener("change", (e)=>{
+        let selectValue= select.value;
+        if(selectValue=== "none"){
+           allMovies.forEach((movie)=>{
+            movie.style.display= "block";
+           })
+        }
+        else{
+            allMovies.forEach((movie)=>{
+                let category= movie.querySelector("p").getAttribute("data-category");
+                if(category===selectValue){
+                    movie.style.display= "block";
+                }
+                else{
+                    movie.style.display= "none";
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
